@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$("#carousel1").owlCarousel({
+  $("#carousel1").owlCarousel({
   items: 1,
   loop: true,
   autoplay: true,
@@ -8,9 +8,7 @@ $("#carousel1").owlCarousel({
   animateIn: 'fadeIn',
   animateOut: 'fadeOut'
   });
-});
 
-$(document).ready(function(){
   $("#carousel2").owlCarousel({
     items: 6,
     loop: true,
@@ -32,9 +30,7 @@ $(document).ready(function(){
       }
   }
   });
-});
 
-$(document).ready(function(){
   $("#carousel3").owlCarousel({
     items: 5,
     loop: true,
