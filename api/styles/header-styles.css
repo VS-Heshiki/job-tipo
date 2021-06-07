@@ -1,0 +1,123 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.header-logo {
+  max-width: 13%;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-link {
+	padding: .5rem;
+	margin-bottom: 10px;
+	text-decoration: none;
+	transition: .5s;
+	display: block;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header-link:hover {
+  font-weight: bold;
+  color: #ec2300;
+  border-bottom: 1px solid #ec2300;
+}
+
+.header-flag {
+  margin-top: 10px;
+  margin-left: 20px;
+	display: block;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #header {
+    background: #000;
+  }
+
+  .header-logo {
+    max-width: 50% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-link {
+    color: #fff !important;
+    padding: 1rem;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, .05);
+  }
+
+  .header-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #000;
+    height: 0;
+    transition: .6s;
+    margin-top: 2rem;
+    visibility: hidden;
+    overflow-y: hidden;
+    z-index: 1000;
+  }
+
+  #nav.active .header-nav {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+    margin-top: 6rem;
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  #menu {
+    border-top: 2px solid #fff ;
+  }
+
+  #menu::after, #menu::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    background: #fff;
+    transition: .3s;
+    position: relative;
+  }
+
+  #nav.active #menu{
+    border-top-color: transparent;
+  }
+  #nav.active #menu::before{
+    transform: rotate(135deg);
+  }
+  #nav.active #menu::after{
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+@media (max-width:600px) {
+  #nav.active .header-nav {
+    margin-top: 2rem !important;
+  }
+}
